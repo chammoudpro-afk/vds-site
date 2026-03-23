@@ -425,4 +425,6 @@ footer {
     .logo {
         height: 45px;
     }
+/* Minor optimization to force Git update */
+nav img.logo { display: inline-block; }
 }
