@@ -327,3 +327,102 @@ footer {
 .logo { height: 60px; margin-right: 12px; vertical-align: middle; }
 
 .biglogo { height: 400px; margin-right: 12px; vertical-align: middle; }
+
+/* ------------------------------
+   HAMBURGER MENU (MOBILE)
+------------------------------ */
+
+/* Hide hamburger on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #F4EFE6; /* matches your nav text color */
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+/* Mobile nav container */
+.nav-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+/* ------------------------------
+   MOBILE BREAKPOINT
+------------------------------ */
+@media (max-width: 768px) {
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Turn nav into vertical dropdown */
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #2E3D32;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        display: none; /* hidden by default */
+        border-bottom: 2px solid #556B2F;
+    }
+
+    /* When active */
+    nav ul.active {
+        display: flex;
+    }
+
+    /* Animate hamburger into X */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Hero text scaling */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Cards stack cleanly */
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Form width fix */
+    form input,
+    form textarea {
+        width: 100%;
+    }
+
+    /* Logo scaling */
+    .logo {
+        height: 45px;
+    }
+}
