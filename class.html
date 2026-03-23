@@ -67,6 +67,14 @@ hamburger.addEventListener('click', () => {
 <footer>
     <p>© 2026 Valley Data Solutions.</p>
 </footer>
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
 
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+</script>
 </body>
 </html>
