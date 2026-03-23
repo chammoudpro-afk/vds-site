@@ -10,6 +10,29 @@ body {
 }
 
 /* -----------------------------------
+   LOGO SIZING
+----------------------------------- */
+.logo {
+    height: 60px;
+    max-height: 60px;
+    width: auto;
+}
+
+.biglogo {
+    height: 120px;
+    max-height: 120px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Prevent hero from stretching the big logo */
+.hero img.biglogo {
+    width: auto !important;
+    max-width: none !important;
+}
+
+/* -----------------------------------
    NAVIGATION
 ----------------------------------- */
 nav {
@@ -26,11 +49,6 @@ nav {
     display: flex;
     align-items: center;
     gap: 12px;
-}
-
-.logo {
-    height: 60px;
-    vertical-align: middle;
 }
 
 /* -----------------------------------
@@ -73,7 +91,7 @@ nav {
 .side-menu {
     position: fixed;
     top: 0;
-    left: -260px; /* hidden off-screen */
+    left: -320px; /* fully hidden off-screen */
     width: 260px;
     height: 100vh;
     background-color: #2E3D32;
@@ -167,6 +185,7 @@ header {
     text-align: center;
     padding: 40px 20px 20px;
     color: #2E3D32;
+    background: none; /* removes green bar on other pages */
 }
 
 .intro,
@@ -285,5 +304,11 @@ footer {
 
     .logo {
         height: 48px;
+        max-height: 48px;
+    }
+
+    .biglogo {
+        height: 100px;
+        max-height: 100px;
     }
 }
