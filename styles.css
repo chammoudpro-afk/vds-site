@@ -427,4 +427,64 @@ footer {
     }
 /* Minor optimization to force Git update */
 nav img.logo { display: inline-block; }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* THIS fixes the vertical alignment */
+    padding: 12px 20px;
+    background-color: #2E3D32;
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+}
+/* Slide-out menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px; /* hidden off-screen */
+    width: 260px;
+    height: 100vh;
+    background-color: #2E3D32;
+    padding: 40px 20px;
+    transition: left 0.3s ease;
+    z-index: 2000;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.side-menu a {
+    color: #F4EFE6;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.side-menu.active {
+    left: 0; /* slide in */
+}
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
