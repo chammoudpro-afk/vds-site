@@ -5,123 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About — Valley Data Solutions</title>
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-        :root {
-            --cream: #E3D9C8;
-            --green-dark: #1F2A22;
-            --green-deep: #2E3D32;
-        }
-
-        body {
-            background: var(--green-dark);
-            color: var(--cream);
-        }
-
-        /* --- HERO --- */
-        .hero {
-            background: linear-gradient(180deg, var(--green-deep) 0%, var(--green-dark) 100%);
-            padding: 100px 20px 80px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-	    color: #E3D9C8;
-
-        }
-
-        .hero p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.25rem;
-            line-height: 1.6;
-	    color: #E3D9C8
-        }
-
-        /* --- SECTION WRAPPERS --- */
-        section {
-            padding: 80px 20px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 2.4rem;
-            margin-bottom: 12px;
-        }
-
-        .section-header p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        /* --- FOUNDER SECTION (cream background) --- */
-        .founder-section {
-            background: var(--cream);
-            color: var(--green-deep);
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .founder-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: #cfc4b3; /* placeholder tone */
-            margin: 0 auto 30px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-        }
-
-        .founder-section h3 {
-            font-size: 2rem;
-            margin-bottom: 16px;
-        }
-
-        .founder-section p {
-            max-width: 750px;
-            margin: 0 auto;
-            font-size: 1.15rem;
-            line-height: 1.7;
-        }
-
-        /* --- APPROACH SECTION --- */
-        .approach-section p {
-            max-width: 750px;
-            margin: 0 auto;
-            font-size: 1.15rem;
-            line-height: 1.7;
-        }
-
-        /* --- CTA --- */
-        .cta-section {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .cta-section a {
-            background: var(--cream);
-            color: var(--green-deep);
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: var(--green-dark);
-            color: var(--cream);
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
 </head>
 
 <body>
@@ -151,6 +34,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="about.html" class="cta">About</a></li>
+            <li><a href="class.html">Class</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
 
@@ -162,65 +46,61 @@
         </div>
     </div>
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- PAGE HERO -->
+    <section class="page-hero">
         <h1>About Valley Data Solutions</h1>
-        <p>
-            A community‑rooted approach to data, technology, and education — built to empower the people and organizations who make our region stronger.
-        </p>
+        <p>A community‑rooted approach to data, technology, and education — built to empower the people and organizations who make our region stronger.</p>
     </section>
 
-    <!-- MISSION SECTION -->
-    <section>
-        <div class="section-header">
+    <!-- FULL-WIDTH CREAM PANEL -->
+    <section class="full-panel cream">
+        <div class="inner">
             <h2>Our Mission</h2>
             <p>
                 Valley Data Solutions exists to support the communities we grew up in — small businesses, schools, and local organizations that deserve modern tools without the complexity or cost of big‑city consulting.
             </p>
+            <p>
+                With deep roots in an educator family, we believe technology should lift people up, not overwhelm them. Our mission is to make data and AI approachable, ethical, and genuinely useful — especially for the teachers, administrators, and small business owners who already carry so much on their shoulders.
+            </p>
         </div>
-
-        <p style="max-width: 750px; margin: 0 auto; font-size: 1.15rem; line-height: 1.7;">
-            With deep roots in an educator family, we believe technology should lift people up, not overwhelm them. Our mission is to make data and AI approachable, ethical, and genuinely useful — especially for the teachers, administrators, and small business owners who already carry so much on their shoulders.
-        </p>
     </section>
 
-    <!-- FOUNDER SECTION (cream background) -->
-    <section class="founder-section">
-        <div class="founder-photo">
-    <img src="Founder.png" alt="Founder Photo">
-</div>
+    <!-- FOUNDER SECTION -->
+    <section class="full-panel dark">
+        <div class="inner">
+            <h2>Meet the Founder</h2>
 
-        <h3>Meet the Founder</h3>
+            <div class="founder-photo">
+                <img src="Founder.png" alt="Founder Photo">
+            </div>
 
-        <p>
-            I'm Christopher, and I started Valley Data Solutions with a simple belief:  
-            the people who serve our communities deserve tools that serve them back.
-        </p>
-
-        <br>
-
-        <p>
-            Growing up in a family of educators shaped everything about how I work — with patience, clarity, and a commitment to making complex ideas feel accessible. Whether I’m helping a school understand their data or guiding a small business through AI adoption, my goal is always the same: empower people with knowledge, not jargon.
-        </p>
+            <p>
+                I'm Christopher, and I started Valley Data Solutions with a simple belief: the people who serve our communities deserve tools that serve them back.
+            </p>
+            <p>
+                Growing up in a family of educators shaped everything about how I work — with patience, clarity, and a commitment to making complex ideas feel accessible. Whether I'm helping a school understand their data or guiding a small business through AI adoption, my goal is always the same: empower people with knowledge, not jargon.
+            </p>
+        </div>
     </section>
 
-    <!-- APPROACH SECTION -->
-    <section class="approach-section">
-        <div class="section-header">
+    <!-- FULL-WIDTH CREAM PANEL -->
+    <section class="full-panel cream">
+        <div class="inner">
             <h2>Our Approach</h2>
+            <p>
+                We take a warm, human‑centered approach to every project. That means listening first, designing solutions that fit your real‑world needs, and making sure you feel confident every step of the way.
+            </p>
+            <p>
+                Our work is grounded in clarity, sustainability, and ethical use of technology — because the tools we build today shape the communities we live in tomorrow.
+            </p>
         </div>
-
-        <p>
-            We take a warm, human‑centered approach to every project. That means listening first, designing solutions that fit your real‑world needs, and making sure you feel confident every step of the way.  
-            Our work is grounded in clarity, sustainability, and ethical use of technology — because the tools we build today shape the communities we live in tomorrow.
-        </p>
     </section>
 
     <!-- CTA SECTION -->
     <section class="cta-section">
         <h2>Let’s Build Something Meaningful</h2>
-        <p style="max-width: 650px; margin: 20px auto;">
-            Whether you're a school, a small business, or a community organization, we’re here to help you move forward with confidence.
+        <p>
+            Whether you’re a school, a small business, or a community organization, we’re here to help you move forward with confidence.
         </p>
 
         <a href="contact.html">Get in Touch</a>
@@ -231,7 +111,7 @@
         <p>© 2026 Valley Data Solutions — Linden, VA</p>
     </footer>
 
-    <!-- JS FOR MENU -->
+    <!-- JS -->
     <script>
         const hamburger = document.getElementById('hamburger');
         const fullMenu = document.getElementById('full-menu');

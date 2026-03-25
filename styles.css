@@ -4,47 +4,44 @@
 body {
     margin: 0;
     font-family: "Segoe UI", system-ui, sans-serif;
-    background-color: #F4EFE6;
-    color: #2B2B2B;
+    background-color: #1F2A22;
+    color: #E3D9C8;
     line-height: 1.45;
+}
+
+:root {
+    --cream: #E3D9C8;
+    --green-dark: #1F2A22;
+    --green-deep: #2E3D32;
 }
 
 /* -----------------------------------
    LOGO SIZING
 ----------------------------------- */
-
-/* Small nav logo */
 .logo {
     height: 60px;
     width: auto;
 }
 
-/* Large hero logo */
 .biglogo {
-    height: 400px;
-    width: auto;
     display: block;
     margin: 0 auto;
 }
 
-/* Ensure hero logo is never stretched or shrunk */
-.hero img.biglogo {
-    width: auto !important;
-    max-width: none !important;
-    height: 400px !important;
-}
-
 /* -----------------------------------
-   NAVIGATION
+   FIXED NAVIGATION
 ----------------------------------- */
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 20px;
-    background-color: #2E3D32;
-    position: relative;
-    z-index: 1000;
+    background-color: var(--green-deep);
+    z-index: 2000;
 }
 
 .nav-left {
@@ -69,7 +66,7 @@ nav {
 .hamburger span {
     width: 28px;
     height: 3px;
-    background: #F4EFE6;
+    background: var(--cream);
     border-radius: 3px;
     transition: 0.3s ease;
 }
@@ -87,7 +84,7 @@ nav {
 }
 
 /* -----------------------------------
-   FULL-SCREEN MENU
+   OVERLAY
 ----------------------------------- */
 #overlay {
     position: fixed;
@@ -104,26 +101,30 @@ nav {
     pointer-events: auto;
 }
 
+/* -----------------------------------
+   FULL-SCREEN MENU
+----------------------------------- */
 .full-menu {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 100%;
+    left: 0;              /* anchor to left */
+    width: 100vw;         /* EXACT viewport width */
     height: 100vh;
-    background-color: #2E3D32;
-    color: #F4EFE6;
+    background-color: var(--green-deep);
+    color: var(--cream);
     padding: 20px;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: right 0.35s ease;
+    transform: translateX(100%); /* fully hidden to the RIGHT */
+    transition: transform 0.35s ease;
     z-index: 2000;
 }
 
 .full-menu.active {
-    right: 0;
+    transform: translateX(0); /* slide in perfectly */
 }
+
 
 .menu-header {
     display: flex;
@@ -135,7 +136,7 @@ nav {
     background: none;
     border: none;
     font-size: 2.2rem;
-    color: #F4EFE6;
+    color: var(--cream);
     cursor: pointer;
 }
 
@@ -149,15 +150,15 @@ nav {
 }
 
 .menu-links a {
-    color: #F4EFE6;
+    color: var(--cream);
     text-decoration: none;
     font-size: 1.6rem;
     font-weight: 500;
 }
 
 .menu-links a.cta {
-    background-color: #F4EFE6;
-    color: #2E3D32;
+    background-color: var(--cream);
+    color: var(--green-deep);
     padding: 10px 14px;
     border-radius: 4px;
     font-weight: 600;
@@ -175,220 +176,79 @@ nav {
 }
 
 .menu-footer a {
-    color: #F4EFE6;
+    color: var(--cream);
     text-decoration: none;
     font-size: 1rem;
 }
 
 /* -----------------------------------
-   HERO
+   HERO (HOME PAGE)
 ----------------------------------- */
 .hero {
-    color: #F4EFE6;
-    padding: 60px 20px;
+    background: linear-gradient(180deg, var(--green-deep) 0%, var(--green-dark) 100%);
+    padding: 160px 20px 80px; /* accounts for fixed nav */
     text-align: center;
+}
+
+.hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero img.biglogo {
+    height: 280px;
+    width: auto;
+    margin-bottom: 30px;
 }
 
 .hero h1 {
-    margin: 20px 0 8px;
-    font-size: 2.6rem;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 .hero p {
-    margin: 0 0 20px;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    line-height: 1.6;
 }
 
 /* -----------------------------------
-   BUTTONS
+   PAGE HERO (ABOUT, SERVICES, ETC.)
 ----------------------------------- */
-.btn {
-    display: inline-block;
-    padding: 10px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.btn.primary {
-    background-color: #F4EFE6;
-    color: #2E3D32;
-}
-
-.btn.secondary {
-    background-color: #7E8F6E;
-    color: #2E3D32;
-}
-
-/* -----------------------------------
-   SECTIONS
------------------------------------ */
-header {
+.page-hero {
+    background: linear-gradient(180deg, var(--green-deep) 0%, var(--green-dark) 100%);
+    padding: 160px 20px 80px;
     text-align: center;
-    padding: 20px 20px 10px;
-    color: #2E3D32;
 }
 
-.intro,
-.content {
-    max-width: 850px;
-    margin: 20px auto;
-    padding: 0 20px;
+.page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.page-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    line-height: 1.6;
 }
 
 /* -----------------------------------
-   CARDS
+   CONTENT SECTIONS
 ----------------------------------- */
-.cards {
+.about-section,
+.services,
+.content,
+.wwd-section {
     max-width: 900px;
-    margin: 20px auto 40px;
+    margin: 60px auto;
     padding: 0 20px;
-    display: grid;
-    gap: 16px;
+    line-height: 1.7;
 }
 
-.card {
-    background-color: #E3D9C8;
-    border-left: 5px solid #556B2F;
-    padding: 18px;
-    border-radius: 6px;
-}
-
-/* -----------------------------------
-   SERVICES
------------------------------------ */
-.services {
-    max-width: 850px;
-    margin: 20px auto 40px;
-    padding: 0 20px;
-}
-
-.service-card {
-    background-color: #E3D9C8;
-    border-left: 5px solid #556B2F;
-    padding: 18px;
-    border-radius: 6px;
-    margin-bottom: 16px;
-}
-
-.service-card .price {
-    font-weight: 700;
-    margin-top: 8px;
-}
-
-/* -----------------------------------
-   FORMS
------------------------------------ */
-.form-section {
-    max-width: 600px;
-    margin: 20px auto 40px;
-    background-color: #E3D9C8;
-    padding: 22px 18px;
-    border-radius: 8px;
-}
-
-form label {
-    display: block;
-    margin-top: 12px;
-    font-weight: 600;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 4px;
-    border-radius: 4px;
-    border: 1px solid #7E8F6E;
-    background-color: #F4EFE6;
-    font-family: inherit;
-}
-
-button {
-    margin-top: 18px;
-    background-color: #2E3D32;
-    color: #F4EFE6;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-/* -----------------------------------
-   FOOTER
------------------------------------ */
-footer {
-    text-align: center;
-    padding: 16px;
-    background-color: #2E3D32;
-    color: #F4EFE6;
-    margin-top: 30px;
-}
-
-/* -----------------------------------
-   MOBILE
------------------------------------ */
-@media (max-width: 768px) {
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .logo {
-        height: 48px;
-    }
-
-    .biglogo {
-        height: 200px !important;
-    }
-}
-
-/* -----------------------------------
-   DESKTOP FULL-SCREEN MENU FIXES
------------------------------------ */
-@media (min-width: 769px) {
-
-    .full-menu {
-        width: 100%;
-        right: -100%;
-        padding: 40px 60px;
-        justify-content: flex-start;
-        gap: 60px;
-    }
-
-    .menu-header {
-        padding-top: 20px;
-    }
-
-    .menu-links {
-        gap: 32px;
-    }
-
-    .menu-links a {
-        font-size: 2rem;
-    }
-
-    .menu-footer {
-        margin-top: auto;
-        padding-bottom: 40px;
-    }
-}
-
-/* -----------------------------------
-   FOUNDER PHOTO
------------------------------------ */
+/* Founder photo */
 .founder-photo {
     width: 180px;
     height: 180px;
@@ -402,4 +262,241 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* -----------------------------------
+   CTA SECTION
+----------------------------------- */
+.cta-section {
+    background: var(--green-deep);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.cta-section a {
+    background: var(--cream);
+    color: var(--green-deep);
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* -----------------------------------
+   FOOTER
+----------------------------------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--green-dark);
+    color: var(--cream);
+    margin-top: 60px;
+}
+
+/* -----------------------------------
+   MOBILE
+----------------------------------- */
+@media (max-width: 768px) {
+
+    .hero img.biglogo {
+        height: 200px;
+    }
+
+    .hero h1,
+    .page-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p,
+    .page-hero p {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        height: 48px;
+    }
+}
+.full-panel {
+    width: 100%;
+    padding: 80px 0;
+}
+
+.full-panel.cream {
+    background: var(--cream);
+    color: var(--green-deep);
+}
+
+.full-panel.dark {
+    background: var(--green-dark);
+    color: var(--cream);
+}
+
+.inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.panel-flex {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.panel-flex.reverse {
+    flex-direction: row-reverse;
+}
+
+.panel-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.panel-image {
+    flex: 1;
+    min-width: 280px;
+}
+
+.panel-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.menu-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.menu-header img.logo {
+    height: 48px; /* prevents logo from pushing X off-screen */
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--cream);
+    cursor: pointer;
+    line-height: 1;
+    flex-shrink: 0; /* prevents it from disappearing */
+}
+
+.menu-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: visible;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.menu-header img.logo {
+    height: 48px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--cream);
+    cursor: pointer;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-right: 24px; /* <-- the magic fix */
+}
+
+/* -----------------------------------
+   DESKTOP LEFT-SIDE DRAWER MENU
+----------------------------------- */
+@media (min-width: 768px) {
+
+    .full-menu {
+        left: 0;
+        right: auto;
+        width: 10vw; /* 40% of screen */
+        transform: translateX(-100%); /* hide to the left */
+        padding: 40px;
+        border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .full-menu.active {
+        transform: translateX(0); /* slide in */
+    }
+
+    /* Optional: remove overlay on desktop */
+    #overlay {
+        display: none;
+    }
+
+    /* Make sure header elements fit nicely */
+    .menu-header img.logo {
+        height: 60px;
+    }
+
+    .close-menu {
+        margin-right: 0;
+        margin-left: auto; /* push X to the right inside the drawer */
+    }
+}
+
+/* -----------------------------------
+   MOBILE FORM OPTIMIZATION
+----------------------------------- */
+@media (max-width: 600px) {
+
+    /* Reduce overall form width */
+    .contact-form {
+        padding: 1.4rem 1.2rem;
+        max-width: 92%;
+        margin: 0 auto;
+    }
+
+    /* Make inputs feel more compact */
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.65rem 0.75rem;
+        font-size: 1rem;
+    }
+
+    /* Reduce label spacing */
+    .contact-form label {
+        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Tighter spacing between fields */
+    .form-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    /* Make the submit button fit better */
+    .contact-form button {
+        width: 100%;
+        padding: 0.9rem;
+        font-size: 1.05rem;
+        margin-top: 1rem;
+    }
 }

@@ -5,120 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valley Data Solutions</title>
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-        :root {
-            --cream: #E3D9C8;
-            --green-dark: #1F2A22;
-            --green-deep: #2E3D32;
-        }
-
-        body {
-            background: var(--green-dark);
-            color: var(--cream);
-        }
-
-        /* --- HERO --- */
-        .hero {
-            background: linear-gradient(180deg, var(--green-deep) 0%, var(--green-dark) 100%);
-            padding: 120px 20px 100px;
-            text-align: center;
-        }
-
-        .hero img.biglogo {
-            max-height: 120px;
-            margin-bottom: 30px;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 20px;
-            color: var(--cream);
-        }
-
-        .hero p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.25rem;
-            line-height: 1.6;
-        }
-
-        /* --- WHAT WE DO SECTIONS --- */
-        .wwd-section {
-            padding: 80px 20px;
-        }
-
-        .wwd-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .wwd-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .wwd-text h2 {
-            font-size: 2.4rem;
-            margin-bottom: 20px;
-        }
-
-        .wwd-text p {
-            font-size: 1.2rem;
-            line-height: 1.7;
-        }
-
-        .wwd-image {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .wwd-image img {
-            width: 100%;
-            border-radius: 12px;
-        }
-
-        /* --- CTA SECTION --- */
-        .cta-section {
-            background: var(--green-deep);
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.4rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            font-size: 1.2rem;
-            line-height: 1.7;
-        }
-
-        .cta-section a {
-            background: var(--cream);
-            color: var(--green-deep);
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: var(--green-dark);
-            color: var(--cream);
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-        }
-    </style>
 </head>
 
 <body>
@@ -162,69 +48,67 @@
 
     <!-- HERO -->
     <section class="hero">
-        <img src="logo-light.png" class="biglogo" alt="Valley Data Solutions Logo">
-        <h1>Warm, Human‑Centered Data & AI Solutions</h1>
-        <p>
-            Helping small businesses, schools, and community organizations use data and technology with confidence — not confusion.
-        </p>
-    </section>
+        <div class="hero-inner">
+            <img src="logo-light.png" class="biglogo" alt="Valley Data Solutions Logo">
 
-    <!-- WHAT WE DO SECTION 1 — CREAM BG -->
-    <section class="wwd-section" style="background: var(--cream); color: var(--green-deep);">
-        <div class="wwd-container">
+            <h1>Data doesn’t just belong to the big guys — it belongs to the Valley.</h1>
 
-            <div class="wwd-text">
-                <h2>Business Intelligence That Empowers</h2>
-                <p>
-                    We help small businesses and schools make sense of their data through clear, custom dashboards and reporting tools. 
-                    Our approach is warm, human‑centered, and built around your real‑world needs — not confusing jargon or one‑size‑fits‑all templates.
-                </p>
-            </div>
-
-            <div class="wwd-image">
-                <img src="BI.png" alt="Business Intelligence">
-            </div>
-
+            <p>
+                Empowering small businesses and communities with clear, accessible insights rooted in the Shenandoah Valley.
+            </p>
         </div>
     </section>
 
-    <!-- WHAT WE DO SECTION 2 — GREEN BG -->
-    <section class="wwd-section" style="background: var(--green-dark); color: var(--cream);">
-        <div class="wwd-container" style="flex-direction: row-reverse;">
-
-            <div class="wwd-text">
-                <h2>AI Insights That Feel Approachable</h2>
-                <p>
-                    From workflow automation to safe, ethical AI adoption, we guide you through the possibilities with clarity and care. 
-                    Our goal is simple: help you use modern tools confidently, without ever feeling overwhelmed or left behind.
-                </p>
-            </div>
-
-            <div class="wwd-image">
-                <img src="Bear.png" alt="AI Insights">
-            </div>
-
+    <!-- PANEL 1 — TEXT LEFT / IMAGE RIGHT -->
+<section class="full-panel cream">
+    <div class="inner panel-flex">
+        <div class="panel-text">
+            <h2>Business Intelligence That Empowers</h2>
+            <p>
+                We help small businesses and schools make sense of their data through clear, custom dashboards and reporting tools.
+                Our approach is warm, human‑centered, and built around your real‑world needs — not confusing jargon or one‑size‑fits‑all templates.
+            </p>
         </div>
-    </section>
 
-    <!-- WHAT WE DO SECTION 3 — CREAM BG -->
-    <section class="wwd-section" style="background: var(--cream); color: var(--green-deep);">
-        <div class="wwd-container">
-
-            <div class="wwd-text">
-                <h2>Community Programs That Make a Difference</h2>
-                <p>
-                    Rooted in an educator family, we offer free AI safety and career‑readiness programs for teachers and schools. 
-                    These sessions empower educators with practical knowledge they can bring directly into their classrooms and communities.
-                </p>
-            </div>
-
-            <div class="wwd-image">
-                <img src="bearfamily.png" alt="Community Program">
-            </div>
-
+        <div class="panel-image">
+            <img src="BI.png" alt="Business Intelligence">
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- PANEL 2 — TEXT RIGHT / IMAGE LEFT -->
+<section class="full-panel dark">
+    <div class="inner panel-flex reverse">
+        <div class="panel-text">
+            <h2>AI Insights That Feel Approachable</h2>
+            <p>
+                From workflow automation to safe, ethical AI adoption, we guide you through the possibilities with clarity and care.
+                Our goal is simple: help you use modern tools confidently, without ever feeling overwhelmed or left behind.
+            </p>
+        </div>
+
+        <div class="panel-image">
+            <img src="Bear.png" alt="AI Insights">
+        </div>
+    </div>
+</section>
+
+<!-- PANEL 3 — TEXT LEFT / IMAGE RIGHT -->
+<section class="full-panel cream">
+    <div class="inner panel-flex">
+        <div class="panel-text">
+            <h2>Community Programs That Make a Difference</h2>
+            <p>
+                Rooted in an educator family, we offer free AI safety and career‑readiness programs for teachers and schools.
+                These sessions empower educators with practical knowledge they can bring directly into their classrooms and communities.
+            </p>
+        </div>
+
+        <div class="panel-image">
+            <img src="bearfamily.png" alt="Community Program">
+        </div>
+    </div>
+</section>
 
     <!-- CTA SECTION -->
     <section class="cta-section">
@@ -241,7 +125,7 @@
         <p>© 2026 Valley Data Solutions — Linden, VA</p>
     </footer>
 
-    <!-- JS FOR MENU -->
+    <!-- JS -->
     <script>
         const hamburger = document.getElementById('hamburger');
         const fullMenu = document.getElementById('full-menu');
