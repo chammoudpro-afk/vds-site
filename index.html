@@ -5,72 +5,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valley Data Solutions</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        :root {
+            --cream: #E3D9C8;
+            --green-dark: #1F2A22;
+            --green-deep: #2E3D32;
+        }
+
+        body {
+            background: var(--green-dark);
+            color: var(--cream);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            background: linear-gradient(180deg, var(--green-deep) 0%, var(--green-dark) 100%);
+            padding: 120px 20px 100px;
+            text-align: center;
+        }
+
+        .hero img.biglogo {
+            max-height: 120px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: var(--cream);
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.25rem;
+            line-height: 1.6;
+        }
+
+        /* --- WHAT WE DO SECTIONS --- */
+        .wwd-section {
+            padding: 80px 20px;
+        }
+
+        .wwd-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .wwd-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .wwd-text h2 {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+        }
+
+        .wwd-text p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .wwd-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .wwd-image img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        /* --- CTA SECTION --- */
+        .cta-section {
+            background: var(--green-deep);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .cta-section a {
+            background: var(--cream);
+            color: var(--green-deep);
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--green-dark);
+            color: var(--cream);
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    </style>
 </head>
+
 <body>
-<nav>
-    <div class="nav-left">
-        <img src="logo-light.png" class="logo" alt="Valley Data Solutions">
 
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</nav>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-left">
+            <img src="logo-light.png" class="logo" alt="Valley Data Solutions">
 
-<!-- Slide-out menu -->
-<div class="side-menu" id="side-menu">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="cta">Contact</a></li>
-    </ul>
-</div>
-<header class="hero">
-    <div class="hero-content">
-        <header> <img src="logo-light.png" alt="Valley Data Solutions logo" class="biglogo"> </header>
-        <p>Human-centered data and AI solutions for small businesses and local communities.</p>
-        <div class="hero-buttons">
-            <a href="services.html" class="btn primary">View Services</a>
-            <a href="class.html" class="btn secondary">Free AI Safety Class</a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="overlay"></div>
+
+    <div class="full-menu" id="full-menu">
+        <div class="menu-header">
+            <img src="logo-light.png" class="logo" alt="Valley Data Solutions">
+            <button class="close-menu" id="close-menu">×</button>
+        </div>
+
+        <ul class="menu-links">
+            <li><a href="index.html" class="cta">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="class.html">Class</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="menu-footer">
+            <p>Social</p>
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+            <a href="mailto:info@valleydatasolutions.com">Email</a>
         </div>
     </div>
-</header>
 
-<section class="intro">
-    <h2>Data that feels approachable.</h2>
-    <p>We help you understand your numbers, automate your workflows, and build tools that actually fit your day-to-day reality.</p>
-</section>
+    <!-- HERO -->
+    <section class="hero">
+        <img src="logo-light.png" class="biglogo" alt="Valley Data Solutions Logo">
+        <h1>Warm, Human‑Centered Data & AI Solutions</h1>
+        <p>
+            Helping small businesses, schools, and community organizations use data and technology with confidence — not confusion.
+        </p>
+    </section>
 
-<section class="cards">
-    <div class="card">
-        <h3>Business Intelligence</h3>
-        <p>We'll turn your data into clear, confident decisions. If you don't have data ready to go, we'll help you find it.</p>
-    </div>
-    <div class="card">
-        <h3>AI & Automation</h3>
-        <p>Let's talk about AI. Custom strategies that save time, reduce errors, and support your team.</p>
-    </div>
-    <div class="card">
-        <h3>Web & Tools</h3>
-        <p>Simple, modern websites and internal tools that feel intuitive and welcoming.</p>
-    </div>
-</section>
+    <!-- WHAT WE DO SECTION 1 — CREAM BG -->
+    <section class="wwd-section" style="background: var(--cream); color: var(--green-deep);">
+        <div class="wwd-container">
 
-<footer>
-    <p>© 2026 Valley Data Solutions — Empowering communities through data.</p>
-</footer>
-<script>
-const hamburger = document.getElementById('hamburger');
-const sideMenu = document.getElementById('side-menu');
+            <div class="wwd-text">
+                <h2>Business Intelligence That Empowers</h2>
+                <p>
+                    We help small businesses and schools make sense of their data through clear, custom dashboards and reporting tools. 
+                    Our approach is warm, human‑centered, and built around your real‑world needs — not confusing jargon or one‑size‑fits‑all templates.
+                </p>
+            </div>
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    sideMenu.classList.toggle('active');
-});
-</script>
+            <div class="wwd-image">
+                <img src="BI.png" alt="Business Intelligence">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHAT WE DO SECTION 2 — GREEN BG -->
+    <section class="wwd-section" style="background: var(--green-dark); color: var(--cream);">
+        <div class="wwd-container" style="flex-direction: row-reverse;">
+
+            <div class="wwd-text">
+                <h2>AI Insights That Feel Approachable</h2>
+                <p>
+                    From workflow automation to safe, ethical AI adoption, we guide you through the possibilities with clarity and care. 
+                    Our goal is simple: help you use modern tools confidently, without ever feeling overwhelmed or left behind.
+                </p>
+            </div>
+
+            <div class="wwd-image">
+                <img src="Bear.png" alt="AI Insights">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHAT WE DO SECTION 3 — CREAM BG -->
+    <section class="wwd-section" style="background: var(--cream); color: var(--green-deep);">
+        <div class="wwd-container">
+
+            <div class="wwd-text">
+                <h2>Community Programs That Make a Difference</h2>
+                <p>
+                    Rooted in an educator family, we offer free AI safety and career‑readiness programs for teachers and schools. 
+                    These sessions empower educators with practical knowledge they can bring directly into their classrooms and communities.
+                </p>
+            </div>
+
+            <div class="wwd-image">
+                <img src="bearfamily.png" alt="Community Program">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <h2>Let’s Build Something Meaningful</h2>
+        <p>
+            Whether you're a school, small business, or community organization, we’re here to help you move forward with clarity and confidence.
+        </p>
+
+        <a href="contact.html">Get in Touch</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Valley Data Solutions — Linden, VA</p>
+    </footer>
+
+    <!-- JS FOR MENU -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const fullMenu = document.getElementById('full-menu');
+        const overlay = document.getElementById('overlay');
+        const closeMenu = document.getElementById('close-menu');
+
+        function openMenu() {
+            hamburger.classList.add('active');
+            fullMenu.classList.add('active');
+            overlay.classList.add('active');
+        }
+
+        function closeMenuFn() {
+            hamburger.classList.remove('active');
+            fullMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        hamburger.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFn);
+        overlay.addEventListener('click', closeMenuFn);
+    </script>
 
 </body>
 </html>

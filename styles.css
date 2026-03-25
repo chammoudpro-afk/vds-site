@@ -12,24 +12,26 @@ body {
 /* -----------------------------------
    LOGO SIZING
 ----------------------------------- */
+
+/* Small nav logo */
 .logo {
     height: 60px;
-    max-height: 60px;
     width: auto;
 }
 
+/* Large hero logo */
 .biglogo {
-    height: 500px;
-    max-height: 500px;
+    height: 400px;
     width: auto;
     display: block;
     margin: 0 auto;
 }
 
-/* Prevent hero from stretching the big logo */
+/* Ensure hero logo is never stretched or shrunk */
 .hero img.biglogo {
     width: auto !important;
     max-width: none !important;
+    height: 400px !important;
 }
 
 /* -----------------------------------
@@ -72,7 +74,6 @@ nav {
     transition: 0.3s ease;
 }
 
-/* Hamburger animation */
 .hamburger.active span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
@@ -86,60 +87,110 @@ nav {
 }
 
 /* -----------------------------------
-   SLIDE-OUT SIDE MENU
+   FULL-SCREEN MENU
 ----------------------------------- */
-.side-menu {
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1500;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.full-menu {
     position: fixed;
     top: 0;
-    left: -320px; /* fully hidden off-screen */
-    width: 260px;
+    right: -100%;
+    width: 100%;
     height: 100vh;
     background-color: #2E3D32;
-    padding: 40px 20px;
-    transition: left 0.3s ease;
+    color: #F4EFE6;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: right 0.35s ease;
     z-index: 2000;
 }
 
-.side-menu.active {
-    left: 0; /* slide in */
+.full-menu.active {
+    right: 0;
 }
 
-.side-menu ul {
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #F4EFE6;
+    cursor: pointer;
+}
+
+.menu-links {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 40px 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
-.side-menu a {
+.menu-links a {
     color: #F4EFE6;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 500;
 }
 
-.side-menu a.cta {
-    background-color: #7E8F6E;
+.menu-links a.cta {
+    background-color: #F4EFE6;
     color: #2E3D32;
-    padding: 8px 12px;
+    padding: 10px 14px;
     border-radius: 4px;
     font-weight: 600;
+}
+
+.menu-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-footer p {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.menu-footer a {
+    color: #F4EFE6;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
 /* -----------------------------------
    HERO
 ----------------------------------- */
 .hero {
-    background-color: #2E3D32;
     color: #F4EFE6;
     padding: 60px 20px;
     text-align: center;
 }
 
 .hero h1 {
-    margin: 0 0 8px;
+    margin: 20px 0 8px;
     font-size: 2.6rem;
 }
 
@@ -149,12 +200,6 @@ nav {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
 }
 
 /* -----------------------------------
@@ -183,9 +228,8 @@ nav {
 ----------------------------------- */
 header {
     text-align: center;
-    padding: 40px 20px 20px;
+    padding: 20px 20px 10px;
     color: #2E3D32;
-    background: none; /* removes green bar on other pages */
 }
 
 .intro,
@@ -250,7 +294,6 @@ form label {
     display: block;
     margin-top: 12px;
     font-weight: 600;
-    color: #2E3D32;
 }
 
 form input,
@@ -290,6 +333,7 @@ footer {
    MOBILE
 ----------------------------------- */
 @media (max-width: 768px) {
+
     .cards {
         grid-template-columns: 1fr;
     }
@@ -304,11 +348,58 @@ footer {
 
     .logo {
         height: 48px;
-        max-height: 48px;
     }
 
     .biglogo {
-        height: 200px;
-        max-height: 200px;
+        height: 200px !important;
     }
+}
+
+/* -----------------------------------
+   DESKTOP FULL-SCREEN MENU FIXES
+----------------------------------- */
+@media (min-width: 769px) {
+
+    .full-menu {
+        width: 100%;
+        right: -100%;
+        padding: 40px 60px;
+        justify-content: flex-start;
+        gap: 60px;
+    }
+
+    .menu-header {
+        padding-top: 20px;
+    }
+
+    .menu-links {
+        gap: 32px;
+    }
+
+    .menu-links a {
+        font-size: 2rem;
+    }
+
+    .menu-footer {
+        margin-top: auto;
+        padding-bottom: 40px;
+    }
+}
+
+/* -----------------------------------
+   FOUNDER PHOTO
+----------------------------------- */
+.founder-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.founder-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

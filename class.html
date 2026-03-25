@@ -3,75 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free AI Safety Class – Valley Data Solutions</title>
+    <title>AI Safety & Careers Class — Valley Data Solutions</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        :root {
+            --cream: #E3D9C8;
+            --green-dark: #1F2A22;
+            --green-deep: #2E3D32;
+        }
+
+        body {
+            background: var(--green-dark);
+            color: var(--cream);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            background: linear-gradient(180deg, var(--green-deep) 0%, var(--green-dark) 100%);
+            padding: 100px 20px 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--cream);
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+            font-size: 1.25rem;
+            line-height: 1.6;
+        }
+
+        /* --- CLASS FORM SECTION --- */
+        .class-section {
+            padding: 50px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--cream);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 8px;
+            border: none;
+            background: var(--cream);
+            color: var(--green-deep);
+            font-size: 1rem;
+        }
+
+        textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        button {
+            background: var(--cream);
+            color: var(--green-deep);
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        button:hover {
+            background: #d8cdbb;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--green-dark);
+            color: var(--cream);
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    </style>
 </head>
+
 <body>
 
-<nav>
-    <div class="nav-left">
-        <img src="logo-light.png" class="logo" alt="Valley Data Solutions">
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-left">
+            <img src="logo-light.png" class="logo" alt="Valley Data Solutions">
 
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="overlay"></div>
+
+    <div class="full-menu" id="full-menu">
+        <div class="menu-header">
+            <img src="logo-light.png" class="logo" alt="Valley Data Solutions">
+            <button class="close-menu" id="close-menu">×</button>
+        </div>
+
+        <ul class="menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="class.html" class="cta">Class</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="menu-footer">
+            <p>Social</p>
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+            <a href="mailto:info@valleydatasolutions.com">Email</a>
+        </div>
     </div>
-</nav>
 
-<!-- Slide-out menu -->
-<div class="side-menu" id="side-menu">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="cta">Contact</a></li>
-    </ul>
-</div>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>AI Safety & Career Pathways Class</h1>
+        <p>
+            A free, community‑focused program designed for teachers and education professionals who want to understand AI, use it safely, and help students prepare for the future.
+        </p>
+    </section>
 
+    <!-- CLASS SIGN-UP FORM -->
+    <section class="class-section">
+        <form action="https://formspree.io/f/yourFormID" method="POST">
 
+            <div>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
 
-<header>
-    <h1>AI Basics, Safety, & Career Pathways Class</h1>
-    <p>A free program for local teachers and education proffesionals to explore AI, safety, and future careers.</p>
-</header>
+            <div>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="_replyto" required>
+            </div>
 
-<section class="content">
-    <p>This session covers AI basics, responsible use, real-world examples, and practical career paths in data, analytics, and technology.</p>
-</section>
+            <div>
+                <label for="school">School</label>
+                <input type="text" id="school" name="school" required>
+            </div>
 
-<section class="form-section">
-    <form name="class-signup" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="class-signup">
+            <div>
+                <label for="role">Your Role</label>
+                <select id="role" name="role" required>
+                    <option value="">Select your role</option>
+                    <option>Teacher</option>
+                    <option>Administrator</option>
+                    <option>Counselor</option>
+                    <option>Support Staff</option>
+                    <option>Parent</option>
+                    <option>Other</option>
+                </select>
+            </div>
 
-        <label>Your Name</label>
-        <input type="text" name="name" required>
+            <div>
+                <label for="message">Anything you'd like us to know?</label>
+                <textarea id="message" name="message"></textarea>
+            </div>
 
-        <label>Email</label>
-        <input type="email" name="email" required>
+            <button type="submit">Sign Up</button>
 
-        <label>School</label>
-        <input type="text" name="school" required>
+        </form>
+    </section>
 
-        <label>Role (Teacher, Student, Counselor, etc.)</label>
-        <input type="text" name="role">
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Valley Data Solutions — Linden, VA</p>
+    </footer>
 
-        <button type="submit">Sign Up</button>
-    </form>
-</section>
+    <!-- JS FOR MENU -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const fullMenu = document.getElementById('full-menu');
+        const overlay = document.getElementById('overlay');
+        const closeMenu = document.getElementById('close-menu');
 
-<footer>
-    <p>© 2026 Valley Data Solutions.</p>
-</footer>
-<script>
-const hamburger = document.getElementById('hamburger');
-const sideMenu = document.getElementById('side-menu');
+        function openMenu() {
+            hamburger.classList.add('active');
+            fullMenu.classList.add('active');
+            overlay.classList.add('active');
+        }
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    sideMenu.classList.toggle('active');
-});
-</script>
+        function closeMenuFn() {
+            hamburger.classList.remove('active');
+            fullMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        hamburger.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFn);
+        overlay.addEventListener('click', closeMenuFn);
+    </script>
+
 </body>
 </html>
