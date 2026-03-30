@@ -461,45 +461,6 @@ footer {
     }
 }
 
-/* -----------------------------------
-   MOBILE FORM OPTIMIZATION
------------------------------------ */
-@media (max-width: 600px) {
-
-    /* Reduce overall form width */
-    .contact-form {
-        padding: 1.4rem 1.2rem;
-        max-width: 92%;
-        margin: 0 auto;
-    }
-
-    /* Make inputs feel more compact */
-    .contact-form input,
-    .contact-form textarea {
-        padding: 0.65rem 0.75rem;
-        font-size: 1rem;
-    }
-
-    /* Reduce label spacing */
-    .contact-form label {
-        margin-bottom: 0.8rem;
-        font-size: 0.9rem;
-    }
-
-    /* Tighter spacing between fields */
-    .form-row {
-        flex-direction: column;
-        gap: 0.6rem;
-    }
-
-    /* Make the submit button fit better */
-    .contact-form button {
-        width: 100%;
-        padding: 0.9rem;
-        font-size: 1.05rem;
-        margin-top: 1rem;
-    }
-}
 /* -------------------------------------------------
    MOBILE FORM OPTIMIZATION (Contact + Class pages)
    Soft cream card, rounded corners, compact spacing
@@ -507,29 +468,31 @@ footer {
 @media (max-width: 600px) {
 
     /* Form container card */
-    .contact-form,
-    .class-form {
+    .contact-section form,
+    .class-section form {
         background: var(--cream);
         border-radius: 14px;
         padding: 1.6rem 1.2rem;
         max-width: 92%;
         margin: 0 auto;
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        box-sizing: border-box;
     }
 
     /* Labels */
-    .contact-form label,
-    .class-form label {
+    .contact-section label,
+    .class-section label {
         font-size: 0.9rem;
         margin-bottom: 0.5rem;
         color: var(--green-deep);
+        display: block;
     }
 
     /* Inputs + Textareas */
-    .contact-form input,
-    .contact-form textarea,
-    .class-form input,
-    .class-form textarea {
+    .contact-section input,
+    .contact-section textarea,
+    .class-section input,
+    .class-section textarea {
         width: 100%;
         padding: 0.65rem 0.75rem;
         font-size: 1rem;
@@ -537,26 +500,27 @@ footer {
         border: 1px solid rgba(0,0,0,0.15);
         background: #fff;
         box-sizing: border-box;
+        margin-bottom: 1rem;
     }
 
-    .contact-form textarea,
-    .class-form textarea {
+    .contact-section textarea,
+    .class-section textarea {
         min-height: 120px;
     }
 
-    /* Collapse two-column rows */
+    /* Collapse two-column rows (if used) */
     .form-row {
         flex-direction: column;
         gap: 0.7rem;
     }
 
     /* Submit button */
-    .contact-form button,
-    .class-form button {
+    .contact-section button,
+    .class-section button {
         width: 100%;
         padding: 0.9rem;
         font-size: 1.05rem;
         border-radius: 10px;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
 }
