@@ -500,3 +500,63 @@ footer {
         margin-top: 1rem;
     }
 }
+/* -------------------------------------------------
+   MOBILE FORM OPTIMIZATION (Contact + Class pages)
+   Soft cream card, rounded corners, compact spacing
+-------------------------------------------------- */
+@media (max-width: 600px) {
+
+    /* Form container card */
+    .contact-form,
+    .class-form {
+        background: var(--cream);
+        border-radius: 14px;
+        padding: 1.6rem 1.2rem;
+        max-width: 92%;
+        margin: 0 auto;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    /* Labels */
+    .contact-form label,
+    .class-form label {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        color: var(--green-deep);
+    }
+
+    /* Inputs + Textareas */
+    .contact-form input,
+    .contact-form textarea,
+    .class-form input,
+    .class-form textarea {
+        width: 100%;
+        padding: 0.65rem 0.75rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        border: 1px solid rgba(0,0,0,0.15);
+        background: #fff;
+        box-sizing: border-box;
+    }
+
+    .contact-form textarea,
+    .class-form textarea {
+        min-height: 120px;
+    }
+
+    /* Collapse two-column rows */
+    .form-row {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+
+    /* Submit button */
+    .contact-form button,
+    .class-form button {
+        width: 100%;
+        padding: 0.9rem;
+        font-size: 1.05rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+    }
+}
