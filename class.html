@@ -147,44 +147,45 @@
 
     <!-- CLASS SIGN-UP FORM -->
     <section class="class-section">
-        <form action="/api/contact" method="POST">
+       <form action="/api/class" method="POST">
 
-            <div>
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
+    <div>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+    </div>
 
-            <div>
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+    <div>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
 
-            <div>
-                <label for="school">School</label>
-                <input type="text" id="school" name="school" required>
-            </div>
+    <div>
+        <label for="school">School</label>
+        <input type="text" id="school" name="school" required>
+    </div>
 
-            <div>
-                <label for="role">Your Role</label>
-                <select id="role" name="role" required>
-                    <option value="">Select your role</option>
-                    <option>Teacher</option>
-                    <option>Administrator</option>
-                    <option>Counselor</option>
-                    <option>Support Staff</option>
-                    <option>Parent</option>
-                    <option>Other</option>
-                </select>
-            </div>
+    <div>
+        <label for="role">Your Role</label>
+        <select id="role" name="role" required>
+            <option value="" disabled selected>Select your role</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Administrator">Administrator</option>
+            <option value="Counselor">Counselor</option>
+            <option value="Support Staff">Support Staff</option>
+            <option value="Parent">Parent</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
 
-            <div>
-                <label for="message">Anything you'd like us to know?</label>
-                <textarea id="message" name="message"></textarea>
-            </div>
+    <div>
+        <label for="message">Anything you'd like us to know?</label>
+        <textarea id="message" name="message"></textarea>
+    </div>
 
-            <button type="submit">Sign Up</button>
+    <button type="submit">Sign Up</button>
 
-        </form>
+</form>
+
     </section>
 
     <!-- FOOTER -->
